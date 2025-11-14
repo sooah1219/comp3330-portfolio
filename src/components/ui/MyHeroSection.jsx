@@ -1,6 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
-import profile from "./Sooah.png";
 
 export default function MyHero() {
   return (
@@ -8,7 +7,7 @@ export default function MyHero() {
       <Card className="max-w-4xl w-full p-6 flex flex-col md:flex-row items-center gap-6">
         <div className="w-35 h-35 relative rounded-full overflow-hidden border-2 shadow-md">
           <Image
-            src={profile}
+            src="/images/sooah.png"
             alt="Profile"
             fill
             className="object-cover rounded-full"
