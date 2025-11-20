@@ -26,6 +26,8 @@ export default async function ProjectsPage() {
           My Portfolio
         </h1>
 
+
+
         <div className="space-y-6">
           {projects.map((p) => {
             const slug = createSlug(p.title);
@@ -107,6 +109,7 @@ export default async function ProjectsPage() {
           })}
         </div>
       </div>
+
     </main>
   );
 }
