@@ -4,7 +4,7 @@ import { getProjectById } from "@/lib/db";
 import { notFound } from "next/navigation";
 
 export default async function EditPage({ params }) {
-  const { uuid } = await params;        // Next 16: params is a Promise
+  const { uuid } = await params;
   const row = await getProjectById(uuid);
   if (!row) notFound();
 

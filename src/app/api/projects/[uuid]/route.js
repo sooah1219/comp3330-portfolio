@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 
 // GET /api/projects/:uuid
 export async function GET(_req, context) {
-  const { uuid } = await context.params; // ← ✅ params를 await
+  const { uuid } = await context.params;
   const row = await getProjectById(uuid);
   if (!row) return NextResponse.json({ message: "Not found" }, { status: 404 });
   return NextResponse.json({ data: row }, { status: 200 });
@@ -12,7 +12,7 @@ export async function GET(_req, context) {
 
 // PUT /api/projects/:uuid
 export async function PUT(req, context) {
-  const { uuid } = await context.params; // ← ✅
+  const { uuid } = await context.params;
   const body = await req.json();
   const updated = await updateProject(uuid, body);
   if (!updated)
@@ -25,7 +25,7 @@ export async function PUT(req, context) {
 
 // DELETE /api/projects/:uuid
 export async function DELETE(_req, context) {
-  const { uuid } = await context.params; // ← ✅
+  const { uuid } = await context.params;
   const deleted = await deleteProject(uuid);
   if (!deleted)
     return NextResponse.json({ message: "Not found" }, { status: 404 });

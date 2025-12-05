@@ -26,7 +26,7 @@ export default function HeroEditorForm() {
     },
   });
 
-  // Load current hero on mount
+
   useEffect(() => {
     (async () => {
       try {
@@ -44,7 +44,7 @@ export default function HeroEditorForm() {
     })();
   }, [form]);
 
-  // Live avatar preview if file chosen
+
   useEffect(() => {
     if (!avatarFile) return;
     const reader = new FileReader();
@@ -85,10 +85,10 @@ export default function HeroEditorForm() {
 
   return (
     <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-      {/* Avatar preview + file input */}
+
       <div className="flex items-start gap-4">
         <img
-          src={form.watch("avatar") || "/images/avatar.png"}  // public/images에 파일 추가
+          src={form.watch("avatar") || "/images/avatar.png"}
           alt="avatar preview"
           className="w-24 h-24 rounded-full border object-cover"
         />
@@ -98,7 +98,7 @@ export default function HeroEditorForm() {
             accept="image/*"
             onChange={(e) => setAvatarFile(e.target.files?.[0] ?? null)}
           />
-          {/* keep avatar data URL in a hidden field */}
+
           <input type="hidden" {...form.register("avatar")} />
           {form.formState.errors.avatar && (
             <p className="text-sm text-red-600 mt-1">
@@ -108,7 +108,7 @@ export default function HeroEditorForm() {
         </div>
       </div>
 
-      {/* Full name */}
+
       <div>
         <label className="block text-sm font-medium mb-1">Full name</label>
         <input
@@ -119,7 +119,6 @@ export default function HeroEditorForm() {
         <FieldError form={form} name="fullName" />
       </div>
 
-      {/* Short description */}
       <div>
         <label className="block text-sm font-medium mb-1">
           Short description
@@ -132,7 +131,7 @@ export default function HeroEditorForm() {
         <FieldError form={form} name="shortDescription" />
       </div>
 
-      {/* Long description */}
+
       <div>
         <label className="block text-sm font-medium mb-1">Long description</label>
         <textarea

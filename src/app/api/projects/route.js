@@ -50,10 +50,8 @@ import { NextResponse } from "next/server";
 export async function GET() {
   await ensureProjectsTable();
 
-  // 먼저 fetch
   let projects = await fetchProjects();
 
-  // 없으면 seed 후 다시 fetch
   if (!projects || projects.length === 0) {
     await seedInitialProjects();
     projects = await fetchProjects();

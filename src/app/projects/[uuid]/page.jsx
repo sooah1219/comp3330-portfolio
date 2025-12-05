@@ -27,11 +27,11 @@ import { auth0 } from "@/lib/auth0";
 import { getProjectById } from "@/lib/db";
 import { notFound } from "next/navigation";
 
-// (선택) Edge가 아니라 Node 런타임에서 실행되도록 보강
+
 export const runtime = "nodejs";
 
 export default async function ProjectDetail({ params }) {
-  // ⬇️ Next 16 규칙: params는 Promise이므로 언랩 필요
+
   const { uuid } = await params;
 
   const row = await getProjectById(uuid);
@@ -46,8 +46,7 @@ export default async function ProjectDetail({ params }) {
       <p className="text-gray-700 mb-4">{row.description}</p>
 
       {row.image && (
-        // next/image를 쓰는 경우 next.config에 원격 호스트 허용 필요
-        // <Image src={row.image} alt={row.title} width={800} height={450} className="rounded-lg mb-6" />
+
         <img src={row.image} alt={row.title} className="rounded-lg mb-6" />
       )}
 

@@ -1,7 +1,6 @@
 import { defaultHeroContent, getHero, HERO_PLACEHOLDER_AVATAR } from "@/lib/db";
 
-export const revalidate = 0; // ensure fresh content
-
+export const revalidate = 0;
 export default async function MyHeroSection() {
   const hero = await getHero();
   const avatar = hero?.avatar || HERO_PLACEHOLDER_AVATAR;

@@ -25,5 +25,5 @@ export const auth0 = new Auth0Client({
   clientId: AUTH0_CLIENT_ID,
   clientSecret: AUTH0_CLIENT_SECRET,
   secret: AUTH0_SECRET,
-  appBaseUrl: APP_BASE_URL, // ← this removes the 'appBaseUrl' warning
+  appBaseUrl: APP_BASE_URL,
 });
