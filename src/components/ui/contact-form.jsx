@@ -1,6 +1,6 @@
 "use client";
-
 import { zodResolver } from "@hookform/resolvers/zod";
+import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { z } from "zod";
@@ -130,7 +130,11 @@ export default function ContactForm() {
           )}
         />
 
-        <div className="flex justify-end">
+        <div className="flex justify-end gap-2">
+          <Button asChild variant="outline" aria-label="Book an interview">
+            <Link href="/calendar">Book an interview</Link>
+          </Button>
+
           <Button type="submit" disabled={isSubmitting}>
             {isSubmitting ? "Sending..." : "Send message"}
           </Button>

@@ -35,7 +35,7 @@ export default function MyNavBar({ isLoggedIn = false, user = null }) {
 
             <NavigationMenuItem>
               <NavigationMenuLink asChild>
-                <Link href="/resume">Resume</Link>
+                <Link href="/contact-me">Contact</Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
 
